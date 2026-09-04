@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* =========================================================
+   DESIGN TOKENS
+   All brand fonts, colors, and animations used across the
+   app are declared here as Tailwind v4 @theme tokens.
+   Prefer these tokens over hard-coded hex values.
+   ========================================================= */
+@theme {
+  /* ================= Fonts ================= */
+  /* Orbitron — display / heading font */
+  --font-orbitron: "Orbitron", serif;
+  /* Roboto Mono — body / label font */
+  --font-robotomono: "Roboto Mono", serif;
+
+  /* ================= Colors ================= */
+  /* Primary neon cyan accent */
+  --color-quest-cyan: #00eeff;
+  /* Cyan glow used on shadows / badges */
+  --color-quest-cyan-soft: rgba(0, 238, 255, 0.55);
+  /* Secondary blue (badge ring etc.) */
+  --color-quest-blue: #1a6aff;
+  /* Sky blue used on banner chips */
+  --color-quest-sky: #00c6ff;
+  /* Light sky highlight */
+  --color-quest-sky-soft: #bde6ff;
+  /* Azure hover accent */
+  --color-quest-azure: #4cc9f0;
+  /* Purple used on quest card frames */
+  --color-quest-violet: #9b3ff2;
+  /* Alert / primary CTA red */
+  --color-quest-red: #ff3b3b;
+  /* Darker red hover state */
+  --color-quest-red-dark: #e22f2f;
+  /* Near-black base */
+  --color-quest-charcoal: #1a1a1a;
+
+  /* ================= Animations ================= */
+  --animate-fade-in: fade-in 1s linear 1s forwards;
+  --animate-flicker: flicker 0.15s steps(5) 2;
+  --animate-fade-in-down-big: fade-in-down-big 0.8s both;
+  --animate-blink: blink 1.1s ease-in-out infinite;
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+      transform: translateX(2px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateX(-2px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes fade-in-down-big {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -2000px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 6px rgba(0, 238, 255, 0.8);
+    }
+    50% {
+      opacity: 0.35;
+      text-shadow: 0 0 16px rgba(0, 238, 255, 0.95);
+    }
+  }
+}

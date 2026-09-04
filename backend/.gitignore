@@ -1,0 +1,16 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment / secrets (never commit the real .env — but DO commit the template)
+.env
+.env.*
+.env.example
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
